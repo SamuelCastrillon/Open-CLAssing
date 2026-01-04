@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
 /*_ Estilos globales adicionales si son necesarios */
 :root {

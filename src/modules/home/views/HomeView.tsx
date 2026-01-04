@@ -17,7 +17,7 @@ export default function HomeView() {
           placeholder={t("name_placeholder")}
         />
         <button
-          className="px-8 py-3 bg-blue-600 hover:bg-blue-500 rounded-lg font-semibold transition-colors active:scale-95 text-lg"
+          className=" px-8 py-3 bg-blue-600 hover:bg-blue-500 rounded-lg font-semibold transition-colors active:scale-95 text-lg"
           type="button"
         >
           {t("greet_button")}

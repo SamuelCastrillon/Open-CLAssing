@@ -11,4 +11,9 @@ const window = new GlobalWindow();
 (global as unknown as { Node: unknown }).Node = window.Node;
 
 //_ Extiende los matchers de Bun Test con los de jest-dom
-expect.extend(matchers as unknown as Record<string, (received: unknown, ...args: unknown[]) => { pass: boolean; message: () => string }>);
+expect.extend(
+  matchers as unknown as Record<
+    string,
+    (received: unknown, ...args: unknown[]) => { pass: boolean; message: () => string }
+  >,
+);
