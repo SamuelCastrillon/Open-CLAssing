@@ -1,5 +1,14 @@
 //? Módulo Core para lógica compartida en el backend
 pub mod database;
+pub mod scraping;
+
+use scraping::ScrapingResult;
+
+#[tauri::command]
+pub async fn scrape_url(url: String) -> Result<ScrapingResult, String> {
+    //? Delegamos la lógica al módulo de scraping
+    scraping::fetch_page_metadata(&url).await
+}
 
 
 pub fn version() -> &'static str {

@@ -1,9 +1,29 @@
 import { useTranslation } from "react-i18next";
 import { currentTheme, setTheme } from "../../core/state/global-state";
+import { invoke } from "@tauri-apps/api/core";
+import { useState } from "preact/hooks";
 
 //? Vista principal con tematización premium personalizada
 export default function HomeView() {
   const { t } = useTranslation();
+  const [url, setUrl] = useState("");
+  const [scrapingData, setScrapingData] = useState<{ title: string; description?: string } | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleScrape = async () => {
+    if (!url) return;
+    setLoading(true);
+    try {
+      //? Llamamos al comando de Rust
+      const result = await invoke<{ title: string; description?: string }>("scrape_url", { url });
+      setScrapingData(result);
+      console.log("Scraped Data:", result);
+    } catch (error) {
+      console.error("Scraping error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-base-100 text-base-content font-sans transition-colors duration-300">
@@ -56,10 +76,20 @@ export default function HomeView() {
             </label>
             <input
               type="text"
+              value={url}
+              onInput={(e) => setUrl(e.currentTarget.value)}
               placeholder={t("home_url_placeholder")}
               className="w-full bg-base-200 border border-base-300 rounded-md px-4 py-3 placeholder:text-base-content/30 text-sm focus:outline-none focus:border-primary transition-all shadow-sm"
             />
           </div>
+
+          {scrapingData && (
+            <div className="bg-base-300 p-4 rounded-md border border-oc-border/20 slide-in">
+              <p className="text-xs font-bold text-base-content/50 uppercase mb-1">Preview Scraping</p>
+              <h3 className="font-bold text-sm">{scrapingData.title}</h3>
+              {scrapingData.description && <p className="text-xs text-base-content/70 mt-1">{scrapingData.description}</p>}
+            </div>
+          )}
 
           {/*_ Field 2 */}
           <div className="space-y-3">
@@ -74,8 +104,12 @@ export default function HomeView() {
           </div>
 
           <div className="pt-4 flex justify-end md:justify-start">
-            <button className="btn btn-neutral px-6 font-semibold normal-case rounded-md shadow-lg transition-all active:scale-95">
-              {t("home_save_button")}
+            <button 
+              onClick={handleScrape}
+              disabled={loading}
+              className="btn btn-neutral px-6 font-semibold normal-case rounded-md shadow-lg transition-all active:scale-95 disabled:opacity-50"
+            >
+              {loading ? "Scraping..." : t("home_save_button")}
             </button>
           </div>
         </div>
