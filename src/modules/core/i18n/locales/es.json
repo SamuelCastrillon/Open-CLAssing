@@ -1,0 +1,6 @@
+{
+  "welcome": "Bienvenido a OpenCL",
+  "name_placeholder": "Ingresa un nombre...",
+  "greet_button": "Saludar",
+  "greet_message": "¡Hola, {{name}}! ¡Has sido saludado desde Rust!"
+}
