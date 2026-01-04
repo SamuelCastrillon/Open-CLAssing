@@ -6,16 +6,22 @@ Este documento define las reglas de desarrollo y arquitectura para el proyecto. 
 
 - **Metodología de Desarrollo**: **TDD (Test Driven Development)** strictly. Escribir tests antes que la implementación.
 - **Testing Strategy**:
-  - **Unitarios/Integración**: Usaremos **Bun Test** (`bun test`) por su velocidad.
-  - **E2E**: Usaremos **Playwright** para asegurar el funcionamiento en Desktop, Tablet y Mobile.
-- **Plataformas**: Diseño **Responsivo** mandatorio. Debe verse bien en Desktop, Tablet y Mobile.
-- **Internacionalización (i18n)**: Proyecto **Multilenguaje**. No usar strings literales en la UI; usar claves de traducción.
-- **Idioma del Proyecto**:
-  - Comentarios y documentación en **Español**.
-  - Código en **Inglés**.
-- **Arquitectura**: Screaming Architecture.
+  - **Unitarios/Integración**: **Bun Test** (`bun test`). Usamos `happy-dom` y `@testing-library/preact`.
+  - **E2E**: **Playwright** para Desktop, Tablet y Mobile. Configurado en `./playwright.config.ts`.
+- **Compatibilidad Preact/React**: Usamos `preact/compat`. Para librerías que dependen de React (como `react-i18next`), usamos **aliasing** en `tsconfig.json`, `bunfig.toml` y `overrides` en `package.json`.
+- **Internacionalización (i18n)**: Proyecto **Multilenguaje** vía `react-i18next`. No usar strings literales; usar `useTranslation()`.
+- **Idioma**: Comentarios/Docs en **Español**, Código en **Inglés**.
 
-## 2. Arquitectura Frontend (`src`)
+## 2. Comentarios (Better Comments)
+
+Es obligatorio usar prefijos para categorizar los comentarios:
+
+- `//_` : Nueva característica o información importante.
+- `//?` : Explicación técnica o lógica.
+- `//!`: Problema crítico o advertencia.
+- `//TODO`: Tareas pendientes o posibles mejoras.
+
+## 3. Arquitectura Frontend (`src`)
 
 Organización vertical basada en características del negocio.
 
