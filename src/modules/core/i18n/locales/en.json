@@ -1,5 +1,5 @@
 {
-  "welcome": "Welcome to OpenCL",
+  "welcome": "Welcome to OpenCLA",
   "name_placeholder": "Enter a name...",
   "greet_button": "Greet",
   "greet_message": "Hello, {{name}}! You've been greeted from Rust!"
