@@ -7,6 +7,7 @@ Esta guía detalla los estándares técnicos y flujos de trabajo específicos pa
 - **Framework**: Preact (vía `preact/compat` para compatibilidad con el ecosistema React).
 - **Estilos**: Tailwind CSS v4.
 - **i18n**: `react-i18next` (Soportado por aliasing).
+- **Runtime**: **Bun** (único gestor de paquetes y runtime permitido).
 - **Testing**: Bun Test + Happy DOM + `@testing-library/preact`.
 
 ## 📂 Estructura de Directorios

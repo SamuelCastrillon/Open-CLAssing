@@ -10,6 +10,7 @@ Este documento define las reglas **globales** de desarrollo. Para detalles técn
 4. **i18n Obligatorio**: Cero strings literales en la UI.
 5. **Responsividad**: Mobile-first en todos los componentes.
 6. **Screaming Architecture**: Organización por features/módulos.
+7. **Runtime & Package Manager**: Uso obligatorio de **Bun** (`bun`, `bunx`) para el frontend y gestión de paquetes. No usar `npm` o `yarn`.
 
 ## 📝 Sistema de Comentarios (Better Comments)
 
