@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Playwright
+/playwright-report/
+/test-results/
+/playwright/.cache/
+
+# Si usas trazas de ejecución
+/trace.zip
