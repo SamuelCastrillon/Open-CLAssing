@@ -5,5 +5,18 @@
   "greet_message": "Hello, {{name}}! You've been greeted from Rust!",
   "error_boundary_title": "Something went wrong",
   "error_boundary_message": "The application has encountered an unexpected error.",
-  "error_boundary_button": "Reload Application"
+  "error_boundary_button": "Reload Application",
+  "nav_dashboard": "Dashboard",
+  "nav_schedule": "Schedule",
+  "nav_settings": "Settings",
+  "theme_label": "Theme:",
+  "theme_openclassing": "Open-CLAssing (Dark)",
+  "theme_forest": "Forest",
+  "theme_lemonade": "Lemonade",
+  "home_title": "Meeting Schedule Configuration",
+  "home_url_label": "Meeting Schedule URL",
+  "home_url_placeholder": "Enter the URL of the meeting schedule",
+  "home_weeks_label": "Range in Weeks (Optional)",
+  "home_weeks_placeholder": "Enter the number of weeks to scrape",
+  "home_save_button": "Save Configuration"
 }

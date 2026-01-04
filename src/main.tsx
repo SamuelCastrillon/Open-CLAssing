@@ -4,9 +4,12 @@ import "./modules/core/i18n";
 import HomeView from "./modules/home/views/HomeView";
 import ErrorBoundary from "./modules/core/components/error-boundary/ErrorBoundary";
 import { currentTheme } from "./modules/core/state/global-state";
+import { effect } from "@preact/signals";
 
-//_ Aplicar tema inicial
-document.documentElement.setAttribute("data-theme", currentTheme.value);
+//_ Sincronización reactiva del tema con el DOM
+effect(() => {
+  document.documentElement.setAttribute("data-theme", currentTheme.value);
+});
 
 render(
   <ErrorBoundary>

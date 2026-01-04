@@ -5,5 +5,18 @@
   "greet_message": "¡Hola, {{name}}! ¡Has sido saludado desde Rust!",
   "error_boundary_title": "Algo salió mal",
   "error_boundary_message": "La aplicación ha experimentado un error inesperado.",
-  "error_boundary_button": "Recargar Aplicación"
+  "error_boundary_button": "Recargar Aplicación",
+  "nav_dashboard": "Panel",
+  "nav_schedule": "Horario",
+  "nav_settings": "Ajustes",
+  "theme_label": "Tema:",
+  "theme_openclassing": "Open-CLAssing (Oscuro)",
+  "theme_forest": "Bosque",
+  "theme_lemonade": "Limonada",
+  "home_title": "Configuración de Horario de Reuniones",
+  "home_url_label": "URL del Horario de Reunión",
+  "home_url_placeholder": "Ingresa la URL del horario de la reunión",
+  "home_weeks_label": "Rango en Semanas (Opcional)",
+  "home_weeks_placeholder": "Ingresa el número de semanas a escanear",
+  "home_save_button": "Guardar Configuración"
 }
