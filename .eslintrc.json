@@ -20,7 +20,11 @@
   },
   "plugins": ["@typescript-eslint", "preact"],
   "rules": {
-    "@typescript-eslint/no-unused-vars": "warn",
-    "preact/no-unused-vars": "warn"
+    "@typescript-eslint/no-unused-vars": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
