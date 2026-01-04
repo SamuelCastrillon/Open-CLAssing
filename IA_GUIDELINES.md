@@ -4,15 +4,16 @@ Este documento define las reglas de desarrollo y arquitectura para el proyecto. 
 
 ## 1. Reglas Generales
 
-- **Idioma**:
-  - Comentarios, documentación y artifacts en **Español**.
-  - Código (variables, funciones, archivos, etc.) en **Inglés**.
-- **Comentarios**: Usar símbolos para Better Comments:
-  - `//_`: Nueva feature.
-  - `//?`: Explicación.
-  - `//!`: Problema crítico.
-  - `//TODO`: Posible mejora.
-- **Arquitectura**: Screaming Architecture (Modular por features).
+- **Metodología de Desarrollo**: **TDD (Test Driven Development)** strictly. Escribir tests antes que la implementación.
+- **Testing Strategy**:
+  - **Unitarios/Integración**: Usaremos **Bun Test** (`bun test`) por su velocidad.
+  - **E2E**: Usaremos **Playwright** para asegurar el funcionamiento en Desktop, Tablet y Mobile.
+- **Plataformas**: Diseño **Responsivo** mandatorio. Debe verse bien en Desktop, Tablet y Mobile.
+- **Internacionalización (i18n)**: Proyecto **Multilenguaje**. No usar strings literales en la UI; usar claves de traducción.
+- **Idioma del Proyecto**:
+  - Comentarios y documentación en **Español**.
+  - Código en **Inglés**.
+- **Arquitectura**: Screaming Architecture.
 
 ## 2. Arquitectura Frontend (`src`)
 
