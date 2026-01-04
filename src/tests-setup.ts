@@ -1,6 +1,6 @@
-import { GlobalWindow } from 'happy-dom';
-import { expect } from 'bun:test';
-import * as matchers from '@testing-library/jest-dom/matchers';
+import { GlobalWindow } from "happy-dom";
+import { expect } from "bun:test";
+import * as matchers from "@testing-library/jest-dom/matchers";
 
 //_ Configura happy-dom globalmente para simular el navegador
 const window = new GlobalWindow();
