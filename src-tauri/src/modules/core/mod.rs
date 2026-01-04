@@ -1,4 +1,6 @@
 //? Módulo Core para lógica compartida en el backend
+pub mod database;
+
 
 pub fn version() -> &'static str {
     "0.1.0"
