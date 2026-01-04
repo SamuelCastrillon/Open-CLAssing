@@ -1,4 +1,5 @@
 import { render } from "preact";
-import App from "./App";
+import "./modules/core/design-system/index.css";
+import HomeView from "./modules/home/views/HomeView";
 
-render(<App />, document.getElementById("root")!);
+render(<HomeView />, document.getElementById("root")!);
