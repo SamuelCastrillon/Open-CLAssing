@@ -2,5 +2,9 @@
   "welcome": "Bienvenido a OpenCLA",
   "name_placeholder": "Ingresa un nombre...",
   "greet_button": "Saludar",
-  "greet_message": "¡Hola, {{name}}! ¡Has sido saludado desde Rust!"
+  "greet_message": "¡Hola, {{name}}! ¡Has sido saludado desde Rust!",
+  "error_boundary_title": "Algo salió mal",
+  "error_boundary_message": "La aplicación ha experimentado un error inesperado.",
+  "error_boundary_button": "Recargar Aplicación"
 }
+
